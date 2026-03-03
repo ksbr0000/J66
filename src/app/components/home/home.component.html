@@ -1,0 +1,118 @@
+<div class="page-wrapper">
+
+  <!-- Animated background -->
+  <div class="bg-canvas" aria-hidden="true">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+    <div class="grid-overlay"></div>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-inner">
+
+      <div class="hero-badge">
+        <span class="badge-dot"></span>
+        Trusted by 150+ companies worldwide
+      </div>
+
+      <h1 class="hero-headline">
+        Build Digital
+        <span class="headline-gradient">Excellence</span>
+      </h1>
+
+      <p class="hero-sub">
+        We craft transformative Android apps, web platforms, cloud infrastructure,
+        and AI-powered solutions that help businesses scale faster and smarter.
+      </p>
+
+      <div class="hero-ctas">
+        <button class="cta-primary">
+          <!-- <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg> -->
+          <img src="images/call.svg" alt="Call Icon" class="cta-icon" />
+          Book an Intro Call
+        </button>
+        <button class="cta-secondary" (click)="scrollTo('services-section')">
+  Explore Services <span class="cta-arrow">↗</span>
+</button>
+      </div>
+
+      <!-- Service pills -->
+      <!-- <div class="service-pills">
+        @for (s of services; track s.label) {
+          <div class="pill">
+            <span class="pill-icon">{{ s.icon }}</span>
+            <div class="pill-text">
+              <span class="pill-label">{{ s.label }}</span>
+              <span class="pill-desc">{{ s.desc }}</span>
+            </div>
+          </div>
+        }
+      </div> -->
+    </div>
+
+    <!-- Floating card -->
+    <div class="hero-visual" aria-hidden="true">
+      <div class="float-card">
+        <div class="card-header">
+          <div class="card-dots">
+            <span></span><span></span><span></span>
+          </div>
+          <span class="card-title">julius66.io/dashboard</span>
+        </div>
+        <div class="card-content">
+          <div class="metric-row">
+            <span class="metric-label">Revenue Growth</span>
+            <span class="metric-value up">+142%</span>
+          </div>
+          <div class="metric-bar-wrap">
+            <div class="metric-bar"><div class="metric-fill" style="width: 72%"></div></div>
+          </div>
+          <div class="metric-row">
+            <span class="metric-label">User Retention</span>
+            <span class="metric-value up">+89%</span>
+          </div>
+          <div class="metric-bar-wrap">
+            <div class="metric-bar"><div class="metric-fill" style="width: 89%"></div></div>
+          </div>
+          <div class="metric-row">
+            <span class="metric-label">Load Time</span>
+            <span class="metric-value">0.3s</span>
+          </div>
+          <div class="metric-bar-wrap">
+            <div class="metric-bar"><div class="metric-fill" style="width: 96%"></div></div>
+          </div>
+        </div>
+        <div class="card-status">
+          <span class="status-dot"></span>
+          All systems operational
+        </div>
+      </div>
+
+      <div class="float-badge badge-tech">
+        <span>⚡</span>Power </div>
+      <div class="float-badge badge-ai">
+        <span>🤖</span> Excellence
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats bar -->
+  <div class="stats-bar">
+    <div class="stats-inner">
+      @for (s of stats; track s.label) {
+        <div class="stat-item">
+          <span class="stat-value">{{ s.value }}</span>
+          <span class="stat-label">{{ s.label }}</span>
+        </div>
+        @if (!$last) {
+          <div class="stat-divider"></div>
+        }
+      }
+    </div>
+  </div>
+
+</div>

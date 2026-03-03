@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap');
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --brand: #00aeef;
+  --brand-glow: rgba(0, 174, 239, 0.35);
+  --brand-dim: rgba(0, 174, 239, 0.12);
+
+  --bg: #f0f4f8;
+  --bg-secondary: #e4eaf0;
+  --surface: rgba(255, 255, 255, 0.55);
+  --surface-strong: rgba(255, 255, 255, 0.75);
+  --border: rgba(0, 174, 239, 0.18);
+  --border-strong: rgba(0, 174, 239, 0.35);
+  --text-primary: #0a1628;
+  --text-secondary: #3a4a5c;
+  --text-muted: #6b7a8d;
+  --shadow: 0 8px 32px rgba(0, 174, 239, 0.12);
+  --shadow-lg: 0 20px 60px rgba(0, 174, 239, 0.18);
+  --nav-bg: rgba(240, 244, 248, 0.72);
+  --blob1: rgba(0, 174, 239, 0.18);
+  --blob2: rgba(0, 100, 180, 0.12);
+}
+
+[data-theme="dark"] {
+  --bg: #060c14;
+  --bg-secondary: #0c1520;
+  --surface: rgba(255, 255, 255, 0.05);
+  --surface-strong: rgba(255, 255, 255, 0.09);
+  --border: rgba(0, 174, 239, 0.2);
+  --border-strong: rgba(0, 174, 239, 0.45);
+  --text-primary: #e8f4ff;
+  --text-secondary: #a0bcd0;
+  --text-muted: #5a7a8a;
+  --shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+  --shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.7);
+  --nav-bg: rgba(6, 12, 20, 0.72);
+  --blob1: rgba(0, 174, 239, 0.12);
+  --blob2: rgba(0, 80, 160, 0.1);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background-color: var(--bg);
+  color: var(--text-primary);
+  transition: background-color 0.4s ease, color 0.4s ease;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: var(--brand-glow);
+  color: var(--brand);
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--brand);
+  border-radius: 3px;
+}

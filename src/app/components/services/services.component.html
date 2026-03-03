@@ -1,0 +1,64 @@
+<section class="services-outer" id="services-section">
+  <div class="services-sticky">
+
+    <div class="services-header">
+      <span class="section-tag">What We Build</span>
+      <h2 class="section-title">Our <span class="title-accent">Services</span></h2>
+    </div>
+
+    <div class="services-stage" [attr.data-phase]="phase()">
+
+      <div class="image-zone">
+
+        <div class="glass-card card-topleft">
+          <span class="service-tag">{{ active.tag }}</span>
+          <h3 class="card-title">{{ active.title }}</h3>
+          <p class="card-desc">{{ active.description }}</p>
+          <div class="progress-dots">
+            @for (s of services; track s.id; let i = $index) {
+              <span class="dot" [class.active]="i === activeIndex()"></span>
+            }
+          </div>
+        </div>
+
+        <div class="image-wrap">
+          <img [src]="active.image" [alt]="active.title" class="service-img" />
+        </div>
+
+        <div class="glass-card card-bottomright">
+          <span class="features-label">Key Capabilities</span>
+          <ul class="features-list">
+            @for (f of active.features; track f) {
+              <li class="feature-item">
+                <span class="feature-check">
+                  <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <path d="M3 8l3.5 3.5L13 4.5"/>
+                  </svg>
+                </span>
+                {{ f }}
+              </li>
+            }
+          </ul>
+          <button class="card-cta">
+            Learn More
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </button>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="scroll-track">
+      @for (s of services; track s.id; let i = $index) {
+        <div class="track-item" [class.active]="i === activeIndex()">
+          <div class="track-line"></div>
+          <span class="track-label">{{ s.title }}</span>
+        </div>
+      }
+    </div>
+
+  </div>
+</section>

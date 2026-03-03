@@ -1,0 +1,75 @@
+<section class="about-outer" id="about">
+
+  <!-- Hero -->
+  <div class="about-hero">
+    <span class="section-tag">Who We Are</span>
+    <h2 class="about-headline">
+      We don't just build software.<br/>
+      <span class="title-accent">We build what scales.</span>
+    </h2>
+    <p class="about-sub">
+      Julius66 is a digital product studio founded by engineers and designers who got tired
+      of watching great ideas die because of bad execution. We partner with startups and
+      enterprises to ship products that are fast, beautiful, and built to last.
+    </p>
+  </div>
+
+  <!-- Stats -->
+  <div class="about-stats">
+    @for (s of stats; track s.label) {
+      <div class="stat-block">
+        <span class="stat-val">{{ s.value }}</span>
+        <span class="stat-lbl">{{ s.label }}</span>
+      </div>
+    }
+  </div>
+
+  <!-- Mission -->
+  <div class="mission-block">
+    <div class="mission-label">Our Mission</div>
+    <blockquote class="mission-quote">
+      "To make world-class digital products accessible to every business — not just the ones with infinite budgets."
+    </blockquote>
+  </div>
+
+  <!-- Values -->
+  <div class="values-section">
+    <span class="section-tag">What Drives Us</span>
+    <h3 class="values-title">Our <span class="title-accent">Principles</span></h3>
+    <div class="values-grid">
+      @for (v of values; track v.title) {
+        <div class="value-card">
+          <div class="value-icon">{{ v.icon }}</div>
+          <h4 class="value-title">{{ v.title }}</h4>
+          <p class="value-desc">{{ v.desc }}</p>
+        </div>
+      }
+    </div>
+  </div>
+
+  <!-- Stack -->
+  <div class="stack-section">
+    <span class="section-tag">Our Tech Stack</span>
+    <h3 class="values-title">Technologies We <span class="title-accent">Master</span></h3>
+    <div class="stack-cloud">
+      @for (s of stack; track s; let i = $index) {
+        <span class="stack-chip" [class.chip-accent]="i % 5 === 0">{{ s }}</span>
+      }
+    </div>
+  </div>
+
+  <!-- Join CTA -->
+  <div class="join-block">
+    <div class="join-glass">
+      <div class="join-text">
+        <h3 class="join-title">Want to build together?</h3>
+        <p class="join-sub">We're always open to exceptional talent and ambitious projects.</p>
+      </div>
+      <div class="join-actions">
+        <button class="btn-primary-lg">Start a Project</button>
+        <button class="btn-ghost-lg">View Openings ↗</button>
+      </div>
+    </div>
+  </div>
+
+</section>

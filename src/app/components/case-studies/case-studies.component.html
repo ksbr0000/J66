@@ -1,0 +1,120 @@
+<section class="cs-outer" id="case-studies">
+
+  <div class="cs-header">
+    <span class="section-tag">Proven Results</span>
+    <h2 class="section-title">Case <span class="title-accent">Studies</span></h2>
+    <p class="section-sub">Real problems. Real solutions. Measurable impact.</p>
+  </div>
+
+  <div class="filter-bar">
+    @for (f of filters; track f) {
+      <button
+        class="filter-btn"
+        [class.active]="activeFilter() === f"
+        (click)="setFilter(f)">
+        {{ f }}
+      </button>
+    }
+  </div>
+
+  <div class="cs-grid">
+    @for (c of mobileVisible; track c.id) {
+      <div
+        #caseCard
+        class="cs-card"
+        [class.featured]="c.featured"
+        [class.visible]="isVisible(c.id)"
+        [attr.data-id]="c.id"
+        [style.--accent]="c.accentColor"
+        [style.--accent2]="c.accentSecondary">
+
+        <!-- Mockup visual -->
+        <div class="card-visual">
+
+          @if (c.imageUrl) {
+            <img [src]="c.imageUrl" [alt]="c.client" class="case-img" />
+          } @else if (c.mockupType === 'browser') {
+            <div class="mockup-browser">
+              <div class="browser-bar">
+                <div class="browser-dots">
+                  <span></span><span></span><span></span>
+                </div>
+                <div class="browser-url">{{ c.client.toLowerCase() }}.io/dashboard</div>
+              </div>
+              <div class="browser-body">
+                <div class="metric-hero">
+                  <span class="metric-big">{{ c.metrics[0].value }}</span>
+                  <span class="metric-big-label">{{ c.metrics[0].label }}</span>
+                </div>
+                <div class="mock-bars">
+                  <div class="mock-bar" style="width: 85%"></div>
+                  <div class="mock-bar" style="width: 62%"></div>
+                  <div class="mock-bar" style="width: 74%"></div>
+                </div>
+              </div>
+            </div>
+          } @else {
+            <div class="mockup-phone">
+              <div class="phone-notch"></div>
+              <div class="phone-body">
+                <div class="metric-hero">
+                  <span class="metric-big">{{ c.metrics[0].value }}</span>
+                  <span class="metric-big-label">{{ c.metrics[0].label }}</span>
+                </div>
+                <div class="mock-bars">
+                  <div class="mock-bar" style="width: 90%"></div>
+                  <div class="mock-bar" style="width: 70%"></div>
+                </div>
+              </div>
+            </div>
+          }
+
+          <div class="visual-glow"></div>
+        </div>
+
+        <!-- Card content -->
+        <div class="card-body">
+          <div class="card-meta">
+            <span class="client-name">{{ c.client }}</span>
+            <span class="industry-tag">{{ c.industry }}</span>
+          </div>
+
+          <p class="problem-line">
+            <span class="problem-prefix">Problem —</span> {{ c.problem }}
+          </p>
+
+          <p class="solution-line">{{ c.solution }}</p>
+
+          <div class="metrics-row">
+            @for (m of c.metrics; track m.label) {
+              <div class="metric-pill">
+                <span class="mpill-value">{{ m.value }}</span>
+                <span class="mpill-label">{{ m.label }}</span>
+              </div>
+            }
+          </div>
+
+          <div class="stack-row">
+            @for (s of c.stack; track s) {
+              <span class="stack-tag">{{ s }}</span>
+            }
+          </div>
+
+          <button class="view-btn">
+            View Case Study
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </button>
+        </div>
+
+      </div>
+    }
+  </div>
+  <div class="mobile-expand">
+  <button class="expand-btn" (click)="toggleMobile()">
+  {{ mobileExpanded() ? 'Show Less ↑' : 'View More ↓' }}
+</button>
+</div>
+
+</section>

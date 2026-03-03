@@ -1,0 +1,53 @@
+<footer class="footer">
+
+  <div class="footer-glow" aria-hidden="true"></div>
+
+  <div class="footer-inner">
+
+    <div class="footer-top">
+
+      <div class="footer-brand">
+        <a class="brand-mark" href="#">
+          <div class="brand-icon">J</div>
+          <span class="brand-text">Julius<span class="brand-accent">66</span></span>
+        </a>
+        <p class="brand-tagline">
+          Building digital products that scale, perform, and last.
+        </p>
+        <div class="footer-socials">
+          @for (s of socials; track s.label) {
+            <a
+              class="social-btn"
+              [href]="s.href"
+              [attr.aria-label]="s.label"
+              target="_blank"
+              rel="noopener"
+              [innerHTML]="s.icon">
+            </a>
+          }
+        </div>
+      </div>
+
+      <div class="footer-nav">
+        @for (col of links; track col.heading) {
+          <div class="nav-col">
+            <span class="nav-heading">{{ col.heading }}</span>
+            <ul class="nav-list">
+              @for (item of col.items; track item) {
+                <li><a class="nav-link" href="#">{{ item }}</a></li>
+              }
+            </ul>
+          </div>
+        }
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <span class="copyright">© {{ year }} Julius66. All rights reserved.</span>
+      <span class="built-by">Crafted with precision by Julius66 Studio</span>
+    </div>
+
+  </div>
+
+</footer>
