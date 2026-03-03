@@ -18,7 +18,7 @@
   </div>
 
   <div class="cs-grid">
-    @for (c of mobileVisible; track c.id) {
+    @for (c of filtered; track c.id) {
       <div
         #caseCard
         class="cs-card"
@@ -111,10 +111,5 @@
       </div>
     }
   </div>
-  <div class="mobile-expand">
-  <button class="expand-btn" (click)="toggleMobile()">
-  {{ mobileExpanded() ? 'Show Less ↑' : 'View More ↓' }}
-</button>
-</div>
 
 </section>
